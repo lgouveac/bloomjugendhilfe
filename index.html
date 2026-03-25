@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bloom | Jugendhilfe &amp; Entwicklung UG</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-primary-container": "#543e6b",
+        "inverse-on-surface": "#9f9ca1",
+        "secondary-fixed": "#eedbff",
+        "surface-bright": "#fdf8fd",
+        "tertiary-container": "#f6e9fe",
+        "secondary-dim": "#5e4a76",
+        "secondary-fixed-dim": "#e4caff",
+        "on-secondary": "#fef6ff",
+        "inverse-surface": "#0f0e11",
+        "background": "#fdf8fd",
+        "on-tertiary-container": "#5e5566",
+        "on-secondary-fixed": "#4a3761",
+        "on-tertiary-fixed-variant": "#685f70",
+        "surface-tint": "#6c5585",
+        "error-dim": "#6b0221",
+        "tertiary-fixed-dim": "#e7dbef",
+        "primary": "#6c5585",
+        "primary-container": "#e3c6fd",
+        "tertiary": "#645c6c",
+        "surface-container-lowest": "#ffffff",
+        "surface-variant": "#e6e0eb",
+        "surface-dim": "#ddd8e3",
+        "on-primary": "#fff6ff",
+        "on-surface-variant": "#615e67",
+        "error-container": "#f97386",
+        "on-background": "#343139",
+        "inverse-primary": "#e3c6fd",
+        "primary-dim": "#604978",
+        "surface-container": "#f1ecf5",
+        "on-error-container": "#6e0523",
+        "surface-container-highest": "#e6e0eb",
+        "surface-container-low": "#f7f2f9",
+        "surface-container-high": "#ece6ef",
+        "on-surface": "#343139",
+        "error": "#a8364b",
+        "surface": "#fdf8fd",
+        "primary-fixed": "#e3c6fd",
+        "on-tertiary": "#fef6ff",
+        "secondary": "#6b5683",
+        "tertiary-fixed": "#f6e9fe",
+        "secondary-container": "#eedbff",
+        "on-secondary-container": "#5d4975",
+        "primary-fixed-dim": "#d5b9ef",
+        "tertiary-dim": "#585060",
+        "on-secondary-fixed-variant": "#67537f",
+        "outline": "#7d7982",
+        "on-tertiary-fixed": "#4b4353",
+        "on-primary-fixed-variant": "#5d4775",
+        "outline-variant": "#b5b0ba",
+        "on-error": "#fff7f7",
+        "on-primary-fixed": "#402a57",
+        "brand-purple": "#9279AB"
+      },
+      fontFamily: {
+        "headline": ["Manrope"],
+        "body": ["Inter"],
+        "label": ["Inter"]
+      },
+      borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+    },
+  },
+}
+</script>
+<style>
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+}
+.glass-nav {
+  background: rgba(253, 248, 253, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.text-shadow-sm {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05)
+}
+.botanical-accent {
+  filter: opacity(0.08) sepia(1) saturate(0.5) hue-rotate(220deg) brightness(0.7);
+}
+/* Mobile menu */
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mobile-menu.open {
+  transform: translateX(0);
+}
+/* Flower decorations */
+.flower-float {
+  will-change: transform;
+}
+</style>
+</head>
+<body class="bg-surface font-body text-on-surface overflow-x-hidden">
+
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_12px_32px_-4px_rgba(52,49,57,0.04)]">
+  <div class="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+    <div class="flex items-center">
+      <img alt="Bloom Logo" class="h-16 sm:h-20 w-auto" src="logo.png"/>
+    </div>
+    <div class="hidden md:flex items-center gap-8 font-headline font-medium text-sm tracking-wide">
+      <a class="text-[#6c5585] border-b-2 border-[#6c5585] pb-1 hover:scale-105 transition-transform duration-200" href="#home">Home</a>
+      <a class="text-[#343139]/60 hover:text-[#6c5585] transition-colors hover:scale-105 duration-200" href="#antrieb">Was uns antreibt</a>
+      <a class="text-[#343139]/60 hover:text-[#6c5585] transition-colors hover:scale-105 duration-200" href="#arbeit">Wie wir arbeiten</a>
+      <a class="text-[#343139]/60 hover:text-[#6c5585] transition-colors hover:scale-105 duration-200" href="#contact">Kontakt</a>
+    </div>
+    <a class="hidden sm:inline-block bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-semibold text-sm hover:scale-105 transition-transform duration-200 shadow-sm" href="#contact">
+      Kontakt
+    </a>
+    <!-- Hamburger -->
+    <button class="md:hidden flex flex-col gap-1.5 p-2" id="hamburger" aria-label="Menü öffnen">
+      <span class="block w-6 h-0.5 bg-primary transition-all duration-300 origin-center" id="bar1"></span>
+      <span class="block w-6 h-0.5 bg-primary transition-all duration-300" id="bar2"></span>
+      <span class="block w-6 h-0.5 bg-primary transition-all duration-300 origin-center" id="bar3"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 z-[60] pointer-events-none" id="mobile-overlay">
+  <div class="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300 pointer-events-none" id="mobile-backdrop"></div>
+  <div class="mobile-menu absolute right-0 top-0 h-full w-72 bg-surface shadow-2xl pointer-events-auto p-8 pt-20 flex flex-col gap-6" id="mobile-menu">
+    <button class="absolute top-5 right-5 p-2" id="close-menu" aria-label="Menü schließen">
+      <span class="material-symbols-outlined text-primary text-3xl">close</span>
+    </button>
+    <a class="text-[#6c5585] font-headline font-bold text-xl" href="#home" onclick="closeMenu()">Home</a>
+    <a class="text-[#343139]/70 font-headline font-semibold text-xl hover:text-[#6c5585] transition-colors" href="#antrieb" onclick="closeMenu()">Was uns antreibt</a>
+    <a class="text-[#343139]/70 font-headline font-semibold text-xl hover:text-[#6c5585] transition-colors" href="#arbeit" onclick="closeMenu()">Wie wir arbeiten</a>
+    <a class="text-[#343139]/70 font-headline font-semibold text-xl hover:text-[#6c5585] transition-colors" href="#contact" onclick="closeMenu()">Kontakt</a>
+    <a class="bg-primary text-on-primary px-6 py-3 rounded-full font-headline font-bold text-center mt-4" href="#contact" onclick="closeMenu()">Kontakt</a>
+  </div>
+</div>
+
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-surface" id="home">
+  <!-- Animated Floral SVGs -->
+  <div class="flower-float absolute -right-16 sm:-right-32 top-10 w-[400px] sm:w-[600px] lg:w-[800px] h-[400px] sm:h-[600px] lg:h-[800px] pointer-events-none botanical-accent" id="flower-hero-right">
+    <svg class="w-full h-full fill-none stroke-primary stroke-[0.5] rotate-12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path class="flower-path" d="M50 90 Q50 50 80 20 M50 90 Q50 60 20 40 M50 70 Q70 40 50 10 Q30 40 50 70 M50 25 Q65 15 50 5 Q35 15 50 25"></path>
+    </svg>
+  </div>
+  <div class="flower-float absolute -left-20 sm:-left-40 bottom-0 w-[300px] sm:w-[450px] lg:w-[600px] h-[300px] sm:h-[450px] lg:h-[600px] pointer-events-none botanical-accent" id="flower-hero-left">
+    <svg class="w-full h-full fill-none stroke-primary stroke-[0.5] -rotate-12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path class="flower-path" d="M20 80 Q50 50 50 10 M50 50 Q80 70 90 40 M50 40 Q40 20 60 5 Q80 20 50 40"></path>
+    </svg>
+  </div>
+
+  <!-- Extra decorative flowers for parallax -->
+  <div class="flower-float absolute right-[10%] top-[60%] w-[150px] h-[150px] pointer-events-none botanical-accent hidden lg:block" id="flower-extra-1">
+    <svg class="w-full h-full fill-none stroke-primary stroke-[0.4]" viewBox="0 0 100 100">
+      <path d="M50 50 C60 20 80 20 90 50 C80 80 60 80 50 50 M50 50 C40 20 20 20 10 50 C20 80 40 80 50 50"></path>
+    </svg>
+  </div>
+  <div class="flower-float absolute left-[5%] top-[20%] w-[120px] h-[120px] pointer-events-none botanical-accent hidden lg:block" id="flower-extra-2">
+    <svg class="w-full h-full fill-none stroke-primary stroke-[0.4] rotate-45" viewBox="0 0 100 100">
+      <path d="M50 80 Q60 50 50 20 Q40 50 50 80 M30 60 Q50 40 70 60 Q50 80 30 60"></path>
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
+    <div class="space-y-6 sm:space-y-8 text-center md:text-left" id="hero-content">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-container/30 text-primary font-label text-xs font-semibold tracking-widest uppercase">
+        Empowerment &amp; Wachstum
+      </div>
+      <h1 class="font-headline text-4xl sm:text-5xl lg:text-7xl font-extrabold text-on-surface leading-[1.1] tracking-tight">
+        Bloom <span class="text-primary italic">Jugendhilfe</span> &amp; Entwicklung UG
+      </h1>
+      <p class="text-lg sm:text-xl text-on-surface-variant max-w-xl leading-relaxed mx-auto md:mx-0">
+        Potenziale entfalten. Gemeinsam aufblühen.
+      </p>
+      <div class="flex flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
+        <a class="bg-primary text-on-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-headline font-bold text-base sm:text-lg hover:scale-105 transition-all shadow-lg shadow-primary/10" href="#intro">
+          Über uns
+        </a>
+        <a class="border border-outline-variant/30 text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-headline font-bold text-base sm:text-lg hover:bg-primary/5 transition-all" href="#arbeit">
+          Unser Konzept
+        </a>
+      </div>
+    </div>
+    <div class="relative mt-8 md:mt-0 flex justify-center" id="hero-image">
+      <div class="aspect-[4/5] w-[60%] rounded-[2rem] sm:rounded-[3rem] overflow-hidden shadow-2xl relative z-10">
+        <img alt="Soft-focus close-up of blooming flowers" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd2iJzLNTyDZSX8as6APlgXCXQKVjjkveYskNCZP1BO04kptqRXgdaUPhSVlm7qjXVMrIYS0NA6nZsZmZmlpYwSox1LQ-ZGjoM28w6TmQBlzVWOuF71KE5SBJVZtfZPNtsWZ4EGZmLlkWlfVXCBIzg9esNAsislXh0hLFqxjjfY4-pUBnBnIzpSjvZvO3v-vD8paqkKM_1I8peh_dEPA67kuvexKoLKu623SCYsGenX1jdTAgwb0iTmj5JFHgUV25cZrETCTI4E0s"/>
+      </div>
+      <!-- Floral overlay -->
+      <div class="flower-float absolute -bottom-10 sm:-bottom-16 -right-10 sm:-right-16 w-40 sm:w-64 h-40 sm:h-64 z-20 botanical-accent opacity-30" id="flower-hero-overlay">
+        <svg class="w-full h-full fill-none stroke-primary stroke-[0.8]" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 50 C60 20 80 20 90 50 C80 80 60 80 50 50 M50 50 C40 20 20 20 10 50 C20 80 40 80 50 50"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Intro Section -->
+<section class="relative py-16 sm:py-24 bg-surface-container-low overflow-hidden" id="intro">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+    <p class="text-xl sm:text-2xl md:text-3xl text-on-surface-variant leading-relaxed font-headline font-medium italic intro-text">
+      "Manche jungen Menschen haben schon viel erlebt. Viele Einrichtungen. Viele Abschiede. Immer wieder von vorne anfangen. Bei Bloom ist das anders. Wir schaffen einen Ort, der bleibt. Einen Ort, der hält — auch wenn es schwer wird. Besonders dann."
+    </p>
+  </div>
+</section>
+
+<!-- Was uns antreibt -->
+<section class="relative py-16 sm:py-24 bg-surface overflow-hidden" id="antrieb">
+  <div class="absolute inset-0 pointer-events-none">
+    <svg class="flower-float absolute top-20 right-10 w-60 sm:w-96 h-60 sm:h-96 botanical-accent" id="flower-antrieb" viewBox="0 0 100 100">
+      <path class="fill-none stroke-primary stroke-[0.5]" d="M10 90 Q40 80 50 50 M50 50 Q60 20 90 10"></path>
+      <circle class="fill-primary" cx="50" cy="50" r="2"></circle>
+    </svg>
+  </div>
+  <!-- Extra flower bottom-left -->
+  <div class="flower-float absolute -left-10 bottom-20 w-48 h-48 pointer-events-none botanical-accent hidden md:block" id="flower-antrieb-left">
+    <svg class="w-full h-full fill-none stroke-primary stroke-[0.4] rotate-[30deg]" viewBox="0 0 100 100">
+      <path d="M50 90 Q50 50 80 20 M50 90 Q50 60 20 40 M50 70 Q70 40 50 10 Q30 40 50 70"></path>
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="flex flex-col md:flex-row gap-10 lg:gap-16 items-center">
+      <div class="md:w-1/2 text-center md:text-left" id="antrieb-text">
+        <div class="relative inline-block mb-6">
+          <span class="font-label text-sm font-bold text-primary-dim tracking-[0.2em] uppercase">Unsere Philosophie</span>
+          <div class="absolute -bottom-2 left-0 w-12 h-1 bg-primary-container rounded-full"></div>
+        </div>
+        <h2 class="font-headline text-3xl sm:text-4xl font-bold leading-tight mb-8">Was uns antreibt</h2>
+        <div class="space-y-6 text-on-surface-variant text-base sm:text-lg leading-relaxed">
+          <p>Bloom bedeutet aufblühen. Wir glauben daran, dass jeder junge Mensch dazu in der Lage ist — in seinem eigenen Tempo, auf seinem eigenen Weg. Deshalb arbeiten wir individuell, geduldig und auf Augenhöhe. Wir hören zu, bevor wir handeln. Und wir bleiben — auch nach schwierigen Momenten. Unsere klare Botschaft an jeden, der zu uns kommt: "Du bist hier richtig. Wir halten durch — gemeinsam mit dir."</p>
+        </div>
+      </div>
+      <div class="md:w-1/2 grid grid-cols-2 gap-3 sm:gap-4 w-full" id="antrieb-cards">
+        <div class="space-y-3 sm:space-y-4 pt-0 sm:pt-12">
+          <div class="bg-surface-container-lowest p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-sm relative overflow-hidden group card-item">
+            <span class="material-symbols-outlined text-primary text-3xl sm:text-4xl mb-3 sm:mb-4" style="font-variation-settings: 'FILL' 1;">eco</span>
+            <h3 class="font-headline font-bold text-lg sm:text-xl mb-1 sm:mb-2">Geduld</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant">Jeder Mensch hat sein eigenes Tempo.</p>
+          </div>
+          <div class="bg-primary text-on-primary p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-lg relative overflow-hidden group card-item">
+            <span class="material-symbols-outlined text-on-primary text-3xl sm:text-4xl mb-3 sm:mb-4" style="font-variation-settings: 'FILL' 1;">groups</span>
+            <h3 class="font-headline font-bold text-lg sm:text-xl mb-1 sm:mb-2">Beziehung</h3>
+            <p class="text-xs sm:text-sm text-on-primary/80">Wir halten durch — gemeinsam mit dir.</p>
+          </div>
+        </div>
+        <div class="space-y-3 sm:space-y-4">
+          <div class="bg-surface-variant p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-sm relative overflow-hidden group card-item">
+            <span class="material-symbols-outlined text-primary text-3xl sm:text-4xl mb-3 sm:mb-4" style="font-variation-settings: 'FILL' 1;">psychology</span>
+            <h3 class="font-headline font-bold text-lg sm:text-xl mb-1 sm:mb-2">Individuell</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant">Kein Schema, sondern echtes Verstehen.</p>
+          </div>
+          <div class="bg-surface-container-lowest p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-sm relative overflow-hidden group card-item">
+            <span class="material-symbols-outlined text-primary text-3xl sm:text-4xl mb-3 sm:mb-4" style="font-variation-settings: 'FILL' 1;">moving</span>
+            <h3 class="font-headline font-bold text-lg sm:text-xl mb-1 sm:mb-2">Halt</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant">Ein Ort, der bleibt, auch wenn es schwer wird.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wie wir arbeiten -->
+<section class="py-16 sm:py-24 bg-surface-container-low overflow-hidden" id="arbeit">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="mb-10 sm:mb-16 text-center max-w-3xl mx-auto" id="arbeit-header">
+      <div class="inline-flex items-center gap-4 sm:gap-6 mb-4">
+        <svg class="flower-float w-8 sm:w-10 h-8 sm:h-10 botanical-accent" id="flower-arbeit-left" viewBox="0 0 100 100">
+          <path class="fill-none stroke-primary stroke-1" d="M50 80 Q60 50 50 20 Q40 50 50 80"></path>
+        </svg>
+        <h2 class="font-headline text-3xl sm:text-4xl font-bold">Wie wir arbeiten</h2>
+        <svg class="flower-float w-8 sm:w-10 h-8 sm:h-10 botanical-accent rotate-180" id="flower-arbeit-right" viewBox="0 0 100 100">
+          <path class="fill-none stroke-primary stroke-1" d="M50 80 Q60 50 50 20 Q40 50 50 80"></path>
+        </svg>
+      </div>
+      <p class="text-on-surface-variant text-base sm:text-xl leading-relaxed mt-4 sm:mt-6">
+        Jede Maßnahme bei Bloom ist einmalig — zugeschnitten auf den Menschen, der sie braucht. Kein Schema. Kein Einheitsangebot.
+      </p>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6" id="arbeit-bento">
+      <!-- Card 1: Zukunftsperspektiven -->
+      <div class="bg-surface-container-lowest rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-10 relative overflow-hidden shadow-sm bento-card">
+        <div class="relative z-10">
+          <h3 class="font-headline text-xl sm:text-2xl font-bold mb-3">Zukunftsperspektiven</h3>
+          <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed mb-8">Aktive Unterstützung bei Schule, Ausbildung und Perspektivplanung für ein selbstbestimmtes Leben.</p>
+        </div>
+        <!-- Floral bg decoration -->
+        <div class="absolute bottom-0 right-0 w-[60%] h-[50%] pointer-events-none opacity-[0.07]">
+          <svg class="w-full h-full fill-none stroke-primary stroke-[0.5]" viewBox="0 0 100 100">
+            <path d="M50 90 Q50 50 80 20 M50 90 Q50 60 20 40 M50 70 Q70 40 50 10 Q30 40 50 70"></path>
+          </svg>
+        </div>
+        <div class="flex flex-wrap gap-2 relative z-10">
+          <span class="px-4 py-1.5 rounded-full bg-primary-container/40 text-primary text-xs sm:text-sm font-semibold">Nachhilfe</span>
+          <span class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs sm:text-sm font-semibold">Berufsplanung</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Persönlichkeit & Gesundheit (image card) -->
+      <div class="rounded-[2rem] sm:rounded-[3rem] overflow-hidden relative min-h-[320px] sm:min-h-[380px] shadow-sm bento-card group" id="arbeit-image">
+        <img alt="Junge Menschen in der Natur" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd2iJzLNTyDZSX8as6APlgXCXQKVjjkveYskNCZP1BO04kptqRXgdaUPhSVlm7qjXVMrIYS0NA6nZsZmZmlpYwSox1LQ-ZGjoM28w6TmQBlzVWOuF71KE5SBJVZtfZPNtsWZ4EGZmLlkWlfVXCBIzg9esNAsislXh0hLFqxjjfY4-pUBnBnIzpSjvZvO3v-vD8paqkKM_1I8peh_dEPA67kuvexKoLKu623SCYsGenX1jdTAgwb0iTmj5JFHgUV25cZrETCTI4E0s"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/20 to-transparent group-hover:from-primary/60 transition-colors"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-8 sm:p-10 text-on-primary relative z-10">
+          <h3 class="font-headline text-xl sm:text-2xl font-bold mb-2">Persönlichkeit &amp; Gesundheit</h3>
+          <p class="text-on-primary/80 text-sm sm:text-base leading-relaxed mb-4">Sport und Erlebnispädagogik, um körperliches Wohlbefinden und innere Stärke zu fördern. Gesundheit als Fundament für persönliches Wachstum.</p>
+          <div class="flex flex-wrap gap-4 text-xs sm:text-sm font-semibold">
+            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">directions_run</span> Aktivsport</span>
+            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">park</span> Erlebnispädagogik</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Vertrauensvolle Kooperation -->
+      <div class="bg-surface-container-lowest rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-10 relative overflow-hidden shadow-sm bento-card">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 rounded-xl bg-primary-container/40 flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">handshake</span>
+          </div>
+          <h3 class="font-headline text-xl sm:text-2xl font-bold">Vertrauensvolle Kooperation</h3>
+        </div>
+        <div class="border-l-2 border-primary-container pl-4">
+          <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed">Wir pflegen eine enge und transparente Zusammenarbeit mit dem <span class="font-bold text-on-surface">Jugendamt</span>, um die bestmöglichen Ergebnisse für unsere Klienten zu erzielen.</p>
+        </div>
+      </div>
+
+      <!-- Card 4: Individuelle Betreuung -->
+      <div class="bg-primary-container/20 rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-10 relative overflow-hidden shadow-sm bento-card">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+          </div>
+          <h3 class="font-headline text-xl sm:text-2xl font-bold">Individuelle Betreuung</h3>
+        </div>
+        <div class="border-l-2 border-primary-container pl-4">
+          <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed">Wir nehmen uns Zeit, um zu verstehen, was jemand wirklich braucht. Erst dann entwickeln wir gemeinsam den richtigen Weg — kein Schema, sondern echtes Verstehen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Für Fachkräfte & Team -->
+<section class="py-16 sm:py-24 bg-surface overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-6 sm:gap-8">
+    <!-- Fachkräfte -->
+    <div class="bg-surface-container-high rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 relative overflow-hidden card-section">
+      <div class="flower-float absolute right-0 bottom-0 w-48 sm:w-64 h-48 sm:h-64 botanical-accent pointer-events-none translate-x-10 translate-y-10" id="flower-fach">
+        <svg class="w-full h-full fill-none stroke-primary stroke-[0.3]" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 90 C30 70 40 40 50 10 M10 90 C40 80 70 70 90 10"></path>
+        </svg>
+      </div>
+      <div class="relative z-10">
+        <h3 class="font-headline text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Für Fachkräfte &amp; Jugendämter</h3>
+        <p class="text-on-surface-variant text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
+          Wenn klassische Angebote nicht mehr helfen, sind wir der nächste Schritt. Wir nehmen Anfragen ernst und antworten persönlich. Platzanfrage? Schreib uns: <a class="text-primary font-bold hover:underline" href="mailto:anfrage@bloom-jugendhilfe.de">anfrage@bloom-jugendhilfe.de</a>
+        </p>
+        <div class="inline-flex items-center gap-2 text-primary">
+          <span class="material-symbols-outlined">mail</span>
+          <span class="font-bold">Direkter Kontakt</span>
+        </div>
+      </div>
+    </div>
+    <!-- Team -->
+    <div class="bg-primary rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 text-on-primary relative overflow-hidden group card-section">
+      <div class="relative z-10">
+        <h3 class="font-headline text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Werde Teil des Teams</h3>
+        <p class="text-on-primary/80 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
+          Du möchtest junge Menschen begleiten, die besondere Zuwendung brauchen? Und auch in herausfordernden Momenten offen und zugewandt bleiben? Dann freuen wir uns, dich kennenzulernen. <a class="text-white font-bold hover:underline" href="mailto:bewerbung@bloom-jugendhilfe.de">bewerbung@bloom-jugendhilfe.de</a>
+        </p>
+        <div class="inline-flex items-center gap-2">
+          <span class="material-symbols-outlined">person_add</span>
+          <span class="font-bold">Jetzt bewerben</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-16 sm:py-24 bg-surface overflow-hidden" id="contact">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-surface-container-high rounded-[2rem] sm:rounded-[4rem] overflow-hidden flex flex-col lg:flex-row shadow-2xl relative border border-primary/5" id="contact-card">
+      <div class="lg:w-1/2 p-8 sm:p-12 lg:p-20 bg-primary text-on-primary relative overflow-hidden">
+        <div class="flower-float absolute -right-20 -bottom-20 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] opacity-10 pointer-events-none rotate-45" id="flower-contact">
+          <svg class="w-full h-full fill-none stroke-white stroke-[0.3]" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 90 Q50 50 80 20 M50 90 Q50 60 20 40 M50 70 Q70 40 50 10 Q30 40 50 70"></path>
+          </svg>
+        </div>
+        <div class="relative z-10">
+          <h2 class="font-headline text-3xl sm:text-4xl font-bold mb-6 sm:mb-8">Lass uns ins Gespräch kommen</h2>
+          <p class="text-base sm:text-xl text-on-primary/80 mb-8 sm:mb-12">Kontaktiere uns, um mehr über unseren pädagogischen Ansatz zu erfahren oder individuelle Betreuungsfälle zu besprechen.</p>
+          <div class="space-y-6 sm:space-y-8">
+            <div class="flex items-start gap-4">
+              <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-2xl bg-on-primary/10 flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-on-primary">location_on</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-base sm:text-lg">Adresse</h4>
+                <p class="text-on-primary/70 text-sm sm:text-base">47506 Neukirchen-Vluyn, Deutschland</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-2xl bg-on-primary/10 flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-on-primary">mail</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-base sm:text-lg">E-Mail</h4>
+                <p class="text-on-primary/70 text-sm sm:text-base">info@bloom-jugendhilfe.de</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-12 sm:mt-20 pt-8 sm:pt-10 border-t border-on-primary/10 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
+            <div>
+              <p class="font-headline font-bold text-base sm:text-lg">Bloom Jugendhilfe &amp; Entwicklung UG</p>
+              <p class="text-on-primary/60 text-xs sm:text-sm">Professionelle Begleitung für nachhaltiges Wachstum.</p>
+            </div>
+            <img alt="Bloom Icon Small" class="h-10 sm:h-12 w-auto object-contain brightness-200" src="logo.png"/>
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-1/2 p-8 sm:p-12 lg:p-20 bg-surface-container-lowest relative overflow-hidden">
+        <form class="space-y-4 sm:space-y-6 relative z-10">
+          <div class="grid sm:grid-cols-2 gap-4 sm:gap-6">
+            <div class="space-y-2">
+              <label class="font-label text-sm font-semibold text-on-surface-variant ml-1">Vollständiger Name</label>
+              <input class="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-surface-container-high border-none focus:ring-2 focus:ring-primary/20 transition-all text-sm sm:text-base" placeholder="Dein Name" type="text"/>
+            </div>
+            <div class="space-y-2">
+              <label class="font-label text-sm font-semibold text-on-surface-variant ml-1">E-Mail Adresse</label>
+              <input class="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-surface-container-high border-none focus:ring-2 focus:ring-primary/20 transition-all text-sm sm:text-base" placeholder="name@beispiel.de" type="email"/>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label class="font-label text-sm font-semibold text-on-surface-variant ml-1">Betreff</label>
+            <select class="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-surface-container-high border-none focus:ring-2 focus:ring-primary/20 transition-all text-sm sm:text-base">
+              <option>Platzanfrage</option>
+              <option>Allgemeine Frage</option>
+              <option>Kooperationsanfrage</option>
+              <option>Bewerbung</option>
+            </select>
+          </div>
+          <div class="space-y-2">
+            <label class="font-label text-sm font-semibold text-on-surface-variant ml-1">Nachricht</label>
+            <textarea class="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-surface-container-high border-none focus:ring-2 focus:ring-primary/20 transition-all text-sm sm:text-base" placeholder="Wie können wir helfen?" rows="4"></textarea>
+          </div>
+          <button class="w-full bg-primary text-on-primary py-3 sm:py-4 rounded-2xl font-headline font-bold text-base sm:text-lg hover:shadow-lg hover:bg-primary-dim transition-all active:scale-95" type="submit">
+            Nachricht senden
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-8 sm:py-12 mt-12 sm:mt-20 bg-[#f7f2f9] border-t border-primary/10">
+  <div class="flex flex-col md:flex-row justify-between items-center px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto gap-6 sm:gap-8">
+    <div class="flex flex-col items-center md:items-start gap-3">
+      <div class="flex items-center">
+        <img alt="Bloom Icon" class="h-12 w-auto object-contain" src="logo.png"/>
+      </div>
+      <p class="font-body text-sm text-[#343139]/70 max-w-xs text-center md:text-left">Nachhaltige individuelle Entwicklung durch zuverlässige professionelle Beziehungen.</p>
+    </div>
+    <div class="flex flex-col items-center md:items-end gap-4">
+      <div class="flex gap-6 sm:gap-8 font-body text-sm text-[#343139]/70">
+        <a class="hover:text-primary transition-colors" href="#">Datenschutz</a>
+        <a class="hover:text-primary transition-colors" href="#">Impressum</a>
+        <a class="hover:text-primary transition-colors" href="#">AGB</a>
+      </div>
+      <p class="font-body text-xs text-[#343139]/50">© 2024 Bloom Jugendhilfe &amp; Entwicklung UG. Alle Rechte vorbehalten.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// =====================
+// Mobile Menu
+// =====================
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileOverlay = document.getElementById('mobile-overlay');
+const mobileBG = document.getElementById('mobile-backdrop');
+const closeBtn = document.getElementById('close-menu');
+const bar1 = document.getElementById('bar1');
+const bar2 = document.getElementById('bar2');
+const bar3 = document.getElementById('bar3');
+
+function openMenu() {
+  mobileOverlay.classList.remove('pointer-events-none');
+  mobileBG.classList.remove('opacity-0', 'pointer-events-none');
+  mobileBG.classList.add('opacity-100', 'pointer-events-auto');
+  mobileMenu.classList.add('open');
+  bar1.style.transform = 'rotate(45deg) translate(4px, 4px)';
+  bar2.style.opacity = '0';
+  bar3.style.transform = 'rotate(-45deg) translate(4px, -4px)';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+  mobileOverlay.classList.add('pointer-events-none');
+  mobileBG.classList.add('opacity-0', 'pointer-events-none');
+  mobileBG.classList.remove('opacity-100', 'pointer-events-auto');
+  mobileMenu.classList.remove('open');
+  bar1.style.transform = '';
+  bar2.style.opacity = '';
+  bar3.style.transform = '';
+  document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+});
+closeBtn.addEventListener('click', closeMenu);
+mobileBG.addEventListener('click', closeMenu);
+
+// =====================
+// GSAP Animations
+// =====================
+gsap.registerPlugin(ScrollTrigger);
+
+// --- Hero entrance ---
+const heroTL = gsap.timeline({ defaults: { ease: "power3.out" }});
+heroTL
+  .from("#hero-content > *", {
+    y: 60, opacity: 0, stagger: 0.15, duration: 1
+  })
+  .from("#hero-image", {
+    scale: 0.92, opacity: 0, duration: 1.4, ease: "power2.out"
+  }, "-=0.7");
+
+// --- Floating flowers (continuous gentle animation) ---
+document.querySelectorAll('.flower-float').forEach((el, i) => {
+  const dir = i % 2 === 0 ? 1 : -1;
+  gsap.to(el, {
+    y: `${dir * 15}`,
+    x: `${-dir * 8}`,
+    rotation: dir * 3,
+    duration: 4 + (i * 0.7),
+    ease: "sine.inOut",
+    yoyo: true,
+    repeat: -1,
+  });
+});
+
+// --- Flower SVG path draw-in on scroll ---
+document.querySelectorAll('.flower-path').forEach((path) => {
+  const length = path.getTotalLength();
+  gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
+  gsap.to(path, {
+    strokeDashoffset: 0,
+    duration: 2.5,
+    ease: "power2.inOut",
+    scrollTrigger: {
+      trigger: path.closest('section') || path,
+      start: "top 80%",
+      toggleActions: "play none none reverse"
+    }
+  });
+});
+
+// --- Hero flowers scale bloom ---
+gsap.from("#flower-hero-right", {
+  scale: 0.3, opacity: 0, rotation: -20, duration: 2, ease: "elastic.out(1, 0.5)", delay: 0.5
+});
+gsap.from("#flower-hero-left", {
+  scale: 0.4, opacity: 0, rotation: 15, duration: 2, ease: "elastic.out(1, 0.5)", delay: 0.8
+});
+gsap.from("#flower-hero-overlay", {
+  scale: 0, rotation: -90, opacity: 0, duration: 1.5, ease: "back.out(1.7)", delay: 1.2
+});
+
+// --- Parallax on hero flowers ---
+gsap.to("#flower-hero-right", {
+  y: -120, ease: "none",
+  scrollTrigger: { trigger: "#home", start: "top top", end: "bottom top", scrub: 1 }
+});
+gsap.to("#flower-hero-left", {
+  y: -80, ease: "none",
+  scrollTrigger: { trigger: "#home", start: "top top", end: "bottom top", scrub: 1 }
+});
+gsap.to("#flower-extra-1", {
+  y: -60, rotation: 15, ease: "none",
+  scrollTrigger: { trigger: "#home", start: "top top", end: "bottom top", scrub: 1.5 }
+});
+gsap.to("#flower-extra-2", {
+  y: -40, rotation: -10, ease: "none",
+  scrollTrigger: { trigger: "#home", start: "top top", end: "bottom top", scrub: 1.5 }
+});
+
+// --- Intro quote ---
+gsap.from(".intro-text", {
+  y: 40, opacity: 0, duration: 1.2, ease: "power2.out",
+  scrollTrigger: { trigger: "#intro", start: "top 75%", toggleActions: "play none none reverse" }
+});
+
+// --- Antrieb section ---
+gsap.from("#antrieb-text", {
+  x: -60, opacity: 0, duration: 1, ease: "power2.out",
+  scrollTrigger: { trigger: "#antrieb", start: "top 70%", toggleActions: "play none none reverse" }
+});
+gsap.from(".card-item", {
+  y: 50, opacity: 0, scale: 0.9, stagger: 0.15, duration: 0.8, ease: "back.out(1.4)",
+  scrollTrigger: { trigger: "#antrieb-cards", start: "top 75%", toggleActions: "play none none reverse" }
+});
+
+// --- Antrieb flower bloom on scroll ---
+gsap.from("#flower-antrieb", {
+  scale: 0.2, opacity: 0, rotation: -30, duration: 1.5, ease: "elastic.out(1, 0.6)",
+  scrollTrigger: { trigger: "#antrieb", start: "top 60%", toggleActions: "play none none reverse" }
+});
+gsap.from("#flower-antrieb-left", {
+  scale: 0.2, opacity: 0, rotation: 20, duration: 1.5, ease: "elastic.out(1, 0.6)",
+  scrollTrigger: { trigger: "#antrieb", start: "top 50%", toggleActions: "play none none reverse" }
+});
+
+// --- Arbeit section ---
+gsap.from("#arbeit-header", {
+  y: 40, opacity: 0, duration: 1, ease: "power2.out",
+  scrollTrigger: { trigger: "#arbeit", start: "top 70%", toggleActions: "play none none reverse" }
+});
+// Arbeit side flowers spin in
+gsap.from("#flower-arbeit-left", {
+  rotation: -180, scale: 0, duration: 1.2, ease: "back.out(1.7)",
+  scrollTrigger: { trigger: "#arbeit-header", start: "top 75%", toggleActions: "play none none reverse" }
+});
+gsap.from("#flower-arbeit-right", {
+  rotation: 180, scale: 0, duration: 1.2, ease: "back.out(1.7)",
+  scrollTrigger: { trigger: "#arbeit-header", start: "top 75%", toggleActions: "play none none reverse" }
+});
+
+gsap.from(".bento-card", {
+  y: 50, opacity: 0, scale: 0.95, stagger: 0.15, duration: 0.9, ease: "back.out(1.3)",
+  scrollTrigger: { trigger: "#arbeit-bento", start: "top 75%", toggleActions: "play none none reverse" }
+});
+
+// --- Fachkräfte / Team cards ---
+gsap.from(".card-section", {
+  y: 60, opacity: 0, stagger: 0.2, duration: 1, ease: "power2.out",
+  scrollTrigger: { trigger: ".card-section", start: "top 80%", toggleActions: "play none none reverse" }
+});
+
+// --- Fach flower ---
+gsap.from("#flower-fach", {
+  scale: 0, rotation: -45, duration: 1.5, ease: "elastic.out(1, 0.5)",
+  scrollTrigger: { trigger: "#flower-fach", start: "top 90%", toggleActions: "play none none reverse" }
+});
+
+// --- Contact card ---
+gsap.from("#contact-card", {
+  y: 80, opacity: 0, duration: 1.2, ease: "power3.out",
+  scrollTrigger: { trigger: "#contact", start: "top 70%", toggleActions: "play none none reverse" }
+});
+// Contact flower gentle rotation
+gsap.to("#flower-contact", {
+  rotation: 60, duration: 8, ease: "sine.inOut", yoyo: true, repeat: -1
+});
+
+// --- Nav shrink on scroll ---
+ScrollTrigger.create({
+  start: "top -80",
+  onUpdate: (self) => {
+    const nav = document.querySelector('nav');
+    if (self.direction === 1) {
+      nav.style.padding = '0';
+      nav.querySelector('div').style.paddingTop = '0.5rem';
+      nav.querySelector('div').style.paddingBottom = '0.5rem';
+    } else {
+      nav.querySelector('div').style.paddingTop = '';
+      nav.querySelector('div').style.paddingBottom = '';
+    }
+  }
+});
+</script>
+</body>
+</html>
