@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bloom Jugendhilfe - Dokumentation</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;background:#fdf8fd;color:#343139;min-height:100vh}
+
+  /* Lock screen */
+  #lock-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;background:linear-gradient(135deg,#6c5585 0%,#e3c6fd 100%)}
+  .lock-card{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-radius:1.5rem;padding:3rem;max-width:380px;width:90%;text-align:center;box-shadow:0 12px 32px -4px rgba(52,49,57,.08)}
+  .lock-card h1{font-family:'Manrope',sans-serif;font-size:1.5rem;color:#6c5585;margin-bottom:.5rem}
+  .lock-card p{font-size:.875rem;color:#615e67;margin-bottom:1.5rem}
+  .lock-card input{width:100%;padding:.75rem 1rem;border:none;background:#ece6ef;border-radius:.75rem;font-size:1rem;outline:none;transition:all .2s}
+  .lock-card input:focus{background:#fff;box-shadow:0 0 0 2px #6c5585}
+  .lock-card button{margin-top:1rem;width:100%;padding:.75rem;border:none;background:linear-gradient(135deg,#6c5585,#604978);color:#fff;border-radius:9999px;font-size:1rem;font-weight:600;cursor:pointer;transition:transform .2s}
+  .lock-card button:hover{transform:scale(1.02)}
+  .lock-error{color:#a8364b;font-size:.8rem;margin-top:.75rem;display:none}
+
+  /* Content */
+  #content{display:none;max-width:800px;margin:0 auto;padding:2rem 1.5rem}
+  header{text-align:center;padding:2rem 0 1.5rem}
+  header h1{font-family:'Manrope',sans-serif;font-size:2rem;color:#6c5585}
+  header p{color:#615e67;font-size:.9rem;margin-top:.25rem}
+
+  section{background:#f7f2f9;border-radius:1rem;padding:1.75rem;margin-bottom:1.5rem}
+  section h2{font-family:'Manrope',sans-serif;font-size:1.15rem;color:#543e6b;margin-bottom:1rem}
+
+  table{width:100%;border-collapse:separate;border-spacing:0 .5rem}
+  table td{padding:.6rem .75rem;background:#fff;vertical-align:top}
+  table td:first-child{border-radius:.5rem 0 0 .5rem;font-weight:600;color:#6c5585;white-space:nowrap;width:35%}
+  table td:last-child{border-radius:0 .5rem .5rem 0;word-break:break-all}
+
+  .badge{display:inline-block;padding:.2rem .6rem;border-radius:9999px;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.04rem}
+  .badge-purple{background:#e3c6fd;color:#543e6b}
+
+  .note{background:#ece6ef;border-radius:.75rem;padding:1rem;font-size:.85rem;color:#615e67;margin-top:1rem}
+
+  footer{text-align:center;padding:2rem 0;color:#9f9ca1;font-size:.8rem}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<script>
+(function(){
+  function hashStr(s){var h=0;for(var i=0;i<s.length;i++){h=((h<<5)-h)+s.charCodeAt(i);h|=0}return h}
+  var HASH = -1865847195;
+
+  window.addEventListener('DOMContentLoaded',function(){
+    var form=document.getElementById('lock-form');
+    var input=document.getElementById('pwd');
+    var err=document.getElementById('lock-error');
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(hashStr(input.value)===HASH){
+        document.getElementById('lock-screen').style.display='none';
+        document.getElementById('content').style.display='block';
+      }else{
+        err.style.display='block';
+        input.value='';
+        input.focus();
+      }
+    });
+  });
+})();
+</script>
+</head>
+<body>
+
+<!-- Lock Screen -->
+<div id="lock-screen">
+  <div class="lock-card">
+    <h1>Bloom Jugendhilfe</h1>
+    <p>Geschuetzter Bereich. Bitte Passwort eingeben.</p>
+    <form id="lock-form">
+      <input id="pwd" type="password" placeholder="Passwort" autocomplete="off" autofocus/>
+      <button type="submit">Anmelden</button>
+      <p id="lock-error" class="lock-error">Falsches Passwort. Bitte erneut versuchen.</p>
+    </form>
+  </div>
+</div>
+
+<!-- Protected Content -->
+<div id="content">
+  <header>
+    <h1>Bloom Jugendhilfe & Entwicklung</h1>
+    <p>Interne Projektdokumentation</p>
+  </header>
+
+  <!-- Projektuebersicht -->
+  <section>
+    <h2>Projektuebersicht</h2>
+    <table>
+      <tr><td>Projekt</td><td>Bloom Jugendhilfe & Entwicklung UG</td></tr>
+      <tr><td>Typ</td><td>Unternehmenswebsite (Landing Page)</td></tr>
+      <tr><td>Sprache</td><td>Deutsch (de)</td></tr>
+      <tr><td>Technologie</td><td>HTML + Tailwind CSS + GSAP (ScrollTrigger)</td></tr>
+      <tr><td>Schriftarten</td><td>Manrope (Ueberschriften) + Inter (Fliesstext)</td></tr>
+      <tr><td>Design System</td><td>"The Radiant Sanctuary" — siehe DESIGN.md</td></tr>
+    </table>
+  </section>
+
+  <!-- Dateistruktur -->
+  <section>
+    <h2>Dateistruktur</h2>
+    <table>
+      <tr><td>index.html</td><td>Hauptwebsite (Produktion)</td></tr>
+      <tr><td>code.html</td><td>Alternative Version / Quellcode</td></tr>
+      <tr><td>DESIGN.md</td><td>Vollstaendiges Design-System-Dokument</td></tr>
+      <tr><td>logo.png / logo.jpeg</td><td>Logo in verschiedenen Formaten</td></tr>
+      <tr><td>screen.png</td><td>Referenz-Screenshot</td></tr>
+      <tr><td>docs.html</td><td>Diese Dokumentation (passwortgeschuetzt)</td></tr>
+    </table>
+  </section>
+
+  <!-- Zugangsdaten -->
+  <section>
+    <h2>Zugangsdaten & Konten</h2>
+
+    <table>
+      <tr>
+        <td>Dienst</td>
+        <td><span class="badge badge-purple">Domain</span></td>
+      </tr>
+      <tr><td>Plattform</td><td>Namecheap.com</td></tr>
+      <tr><td>Benutzername</td><td>lorypetrucci</td></tr>
+      <tr><td>Passwort</td><td>12345haha</td></tr>
+    </table>
+
+    <div class="note">
+      <strong>Wichtig:</strong> Diese Zugangsdaten sind vertraulich. Teilen Sie diese Datei niemals oeffentlich.
+      Verwenden Sie einen Passwort-Manager (1Password, Bitwarden) fuer sichere Aufbewahrung.
+    </div>
+  </section>
+
+  <!-- Farbpalette -->
+  <section>
+    <h2>Hauptfarbpalette</h2>
+    <table>
+      <tr><td>Primary</td><td style="color:#6c5585;font-weight:600">#6c5585</td></tr>
+      <tr><td>Primary Container</td><td style="color:#e3c6fd;font-weight:600">#e3c6fd <span style="background:#e3c6fd;padding:2px 12px;border-radius:4px;margin-left:4px"></span></td></tr>
+      <tr><td>Surface</td><td style="color:#888">#fdf8fd</td></tr>
+      <tr><td>On-Surface</td><td style="color:#343139;font-weight:600">#343139</td></tr>
+      <tr><td>Error</td><td style="color:#a8364b;font-weight:600">#a8364b</td></tr>
+    </table>
+  </section>
+
+  <!-- Hosting -->
+  <section>
+    <h2>Hosting & Deployment</h2>
+    <table>
+      <tr><td>Domain</td><td>Verwaltet ueber Namecheap (siehe Zugangsdaten oben)</td></tr>
+      <tr><td>Website-Typ</td><td>Statisch — reines HTML, kein Build erforderlich</td></tr>
+      <tr><td>Deployment</td><td>Direkter Upload der HTML-Dateien + Assets</td></tr>
+    </table>
+  </section>
+
+  <footer>
+    Bloom Jugendhilfe & Entwicklung — Interne Dokumentation — Aktualisiert am 28.03.2026
+  </footer>
+</div>
+
+</body>
+</html>

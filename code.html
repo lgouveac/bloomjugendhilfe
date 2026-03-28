@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bloom | Jugendhilfe &amp; Entwicklung UG</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#543e6b",
+              "inverse-on-surface": "#9f9ca1",
+              "secondary-fixed": "#eedbff",
+              "surface-bright": "#fdf8fd",
+              "tertiary-container": "#f6e9fe",
+              "secondary-dim": "#5e4a76",
+              "secondary-fixed-dim": "#e4caff",
+              "on-secondary": "#fef6ff",
+              "inverse-surface": "#0f0e11",
+              "background": "#fdf8fd",
+              "on-tertiary-container": "#5e5566",
+              "on-secondary-fixed": "#4a3761",
+              "on-tertiary-fixed-variant": "#685f70",
+              "surface-tint": "#6c5585",
+              "error-dim": "#6b0221",
+              "tertiary-fixed-dim": "#e7dbef",
+              "primary": "#6c5585",
+              "primary-container": "#e3c6fd",
+              "tertiary": "#645c6c",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#e6e0eb",
+              "surface-dim": "#ddd8e3",
+              "on-primary": "#fff6ff",
+              "on-surface-variant": "#615e67",
+              "error-container": "#f97386",
+              "on-background": "#343139",
+              "inverse-primary": "#e3c6fd",
+              "primary-dim": "#604978",
+              "surface-container": "#f1ecf5",
+              "on-error-container": "#6e0523",
+              "surface-container-highest": "#e6e0eb",
+              "surface-container-low": "#f7f2f9",
+              "surface-container-high": "#ece6ef",
+              "on-surface": "#343139",
+              "error": "#a8364b",
+              "surface": "#fdf8fd",
+              "primary-fixed": "#e3c6fd",
+              "on-tertiary": "#fef6ff",
+              "secondary": "#6b5683",
+              "tertiary-fixed": "#f6e9fe",
+              "secondary-container": "#eedbff",
+              "on-secondary-container": "#5d4975",
+              "primary-fixed-dim": "#d5b9ef",
+              "tertiary-dim": "#585060",
+              "on-secondary-fixed-variant": "#67537f",
+              "outline": "#7d7982",
+              "on-tertiary-fixed": "#4b4353",
+              "on-primary-fixed-variant": "#5d4775",
+              "outline-variant": "#b5b0ba",
+              "on-error": "#fff7f7",
+              "on-primary-fixed": "#402a57",
+              "brand-purple": "#9279AB"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+        }
+        .glass-nav {
+            background: rgba(253, 248, 253, 0.7);
+            backdrop-filter: blur(20px)
+        }
+        .text-shadow-sm {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05)
+        }
+        .floral-mask {
+            mask-image: url('https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/flower-2.svg');
+            mask-repeat: no-repeat;
+            mask-size: contain;
+        }
+        .botanical-accent {
+            filter: opacity(0.08) sepia(1) saturate(0.5) hue-rotate(220deg) brightness(0.7);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_12px_32px_-4px_rgba(52,49,57,0.04)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-4">
+<div class="flex items-center gap-4">
+<img alt="Bloom Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0uhkJxTrGWlKYVaKZYAcT8Fv4x3WPjn_-7wFTBjPMVV9O0T3VqFtGV1TYELvneCjvGkn1ifOfL8clAXHW56F6RkJTqiHAo8_etEGjCv_8VrnJGmHk4UbEPwt3JPpShvb3z6LV24VsNLnDeBdl6I_Q5sU4gTyLkDeU0z4xknyw5uHsC6Cs6q_WTcw5Gb_MUEsHiqqxMygjDGSTKq53VI0hVMCnScosAL6xy-jc6R1Xv-xsn4h2c2maB6lzU7xctGQBGkFA1HYU0jR"/>
+<span class="text-2xl font-bold tracking-tight text-[#6c5585] dark:text-[#e3c6fd] font-headline">Bloom</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-headline font-medium text-sm tracking-wide">
+<a class="text-[#6c5585] dark:text-[#e3c6fd] border-b-2 border-[#6c5585] pb-1 hover:scale-105 transition-transform duration-200" href="#home">Home</a>
+<a class="text-[#343139]/60 dark:text-slate-400 hover:text-[#6c5585] transition-colors hover:scale-105 duration-200" href="#antrieb">Was uns antreibt</a>
+<a class="text-[#343139]/60 dark:text-slate-400 hover:text-[#6c5585] transition-colors hover:scale-105 duration-200" href="#arbeit">Wie wir arbeiten</a>
+<a class="text-[#343139]/60 dark:text-slate-400 hover:text-[#6c5585] transition-colors hover:scale-105 duration-200" href="#contact">Kontakt</a>
+</div>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-semibold text-sm hover:scale-105 transition-transform duration-200 shadow-sm" href="#contact">
+                Kontakt
+            </a>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-surface" id="home">
+<!-- Large Floral Illustration Backgrounds -->
+<div class="absolute -right-32 top-10 w-[800px] h-[800px] pointer-events-none botanical-accent">
+<svg class="w-full h-full fill-none stroke-primary stroke-[0.5] rotate-12" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M50 90 Q50 50 80 20 M50 90 Q50 60 20 40 M50 70 Q70 40 50 10 Q30 40 50 70 M50 25 Q65 15 50 5 Q35 15 50 25"></path>
+</svg>
+</div>
+<div class="absolute -left-40 bottom-0 w-[600px] h-[600px] pointer-events-none botanical-accent">
+<svg class="w-full h-full fill-none stroke-primary stroke-[0.5] -rotate-12" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 80 Q50 50 50 10 M50 50 Q80 70 90 40 M50 40 Q40 20 60 5 Q80 20 50 40"></path>
+</svg>
+</div>
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center relative z-10">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-container/30 text-primary font-label text-xs font-semibold tracking-widest uppercase">
+                        Empowerment &amp; Wachstum
+                    </div>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.1] tracking-tight">
+                        Bloom <span class="text-primary italic">Jugendhilfe</span> &amp; Entwicklung UG
+                    </h1>
+<p class="text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                        Für junge Menschen, die einen Neuanfang verdienen. Wir sind für dich da.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-bold text-lg hover:scale-105 transition-all shadow-lg shadow-primary/10" href="#intro">
+                            Über uns
+                        </a>
+<a class="border border-outline-variant/30 text-primary px-8 py-4 rounded-full font-headline font-bold text-lg hover:bg-primary/5 transition-all" href="#arbeit">
+                            Unser Konzept
+                        </a>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700 relative z-10">
+<img alt="Soft-focus close-up of blooming flowers" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd2iJzLNTyDZSX8as6APlgXCXQKVjjkveYskNCZP1BO04kptqRXgdaUPhSVlm7qjXVMrIYS0NA6nZsZmZmlpYwSox1LQ-ZGjoM28w6TmQBlzVWOuF71KE5SBJVZtfZPNtsWZ4EGZmLlkWlfVXCBIzg9esNAsislXh0hLFqxjjfY4-pUBnBnIzpSjvZvO3v-vD8paqkKM_1I8peh_dEPA67kuvexKoLKu623SCYsGenX1jdTAgwb0iTmj5JFHgUV25cZrETCTI4E0s"/>
+</div>
+<!-- Floral overlay Partial -->
+<div class="absolute -bottom-16 -right-16 w-64 h-64 z-20 botanical-accent opacity-30">
+<svg class="w-full h-full fill-none stroke-primary stroke-[0.8]" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M50 50 C60 20 80 20 90 50 C80 80 60 80 50 50 M50 50 C40 20 20 20 10 50 C20 80 40 80 50 50"></path>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<!-- Intro Section -->
+<section class="relative py-24 bg-surface-container-low overflow-hidden" id="intro">
+<div class="max-w-4xl mx-auto px-8 text-center relative z-10">
+<p class="text-2xl md:text-3xl text-on-surface-variant leading-relaxed font-headline font-medium italic">
+                "Manche jungen Menschen haben schon viel erlebt. Viele Einrichtungen. Viele Abschiede. Immer wieder von vorne anfangen. Bei Bloom ist das anders. Wir schaffen einen Ort, der bleibt. Einen Ort, der hält — auch wenn es schwer wird. Besonders dann."
+            </p>
+</div>
+</section>
+<!-- Was uns antreibt -->
+<section class="relative py-24 bg-surface overflow-hidden" id="antrieb">
+<div class="absolute inset-0 pointer-events-none">
+<svg class="absolute top-20 right-10 w-96 h-96 botanical-accent" viewbox="0 0 100 100">
+<path class="fill-none stroke-primary stroke-[0.5]" d="M10 90 Q40 80 50 50 M50 50 Q60 20 90 10"></path>
+<circle class="fill-primary" cx="50" cy="50" r="2"></circle>
+</svg>
+</div>
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="md:w-1/2">
+<div class="relative inline-block mb-6">
+<span class="font-label text-sm font-bold text-primary-dim tracking-[0.2em] uppercase">Unsere Philosophie</span>
+<div class="absolute -bottom-2 left-0 w-12 h-1 bg-primary-container rounded-full"></div>
+</div>
+<h2 class="font-headline text-4xl font-bold leading-tight mb-8">Was uns antreibt</h2>
+<div class="space-y-6 text-on-surface-variant text-lg leading-relaxed">
+<p>Bloom bedeutet aufblühen. Wir glauben daran, dass jeder junge Mensch dazu in der Lage ist — in seinem eigenen Tempo, auf seinem eigenen Weg. Deshalb arbeiten wir individuell, geduldig und auf Augenhöhe. Wir hören zu, bevor wir handeln. Und wir bleiben — auch nach schwierigen Momenten. Unsere klare Botschaft an jeden, der zu uns kommt: "Du bist hier richtig. Wir halten durch — gemeinsam mit dir."</p>
+</div>
+</div>
+<div class="md:w-1/2 grid grid-cols-2 gap-4">
+<div class="space-y-4 pt-12">
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] shadow-sm relative overflow-hidden group">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">eco</span>
+<h3 class="font-headline font-bold text-xl mb-2">Geduld</h3>
+<p class="text-sm text-on-surface-variant">Jeder Mensch hat sein eigenes Tempo.</p>
+</div>
+<div class="bg-primary text-on-primary p-8 rounded-[2rem] shadow-lg relative overflow-hidden group">
+<span class="material-symbols-outlined text-on-primary text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">groups</span>
+<h3 class="font-headline font-bold text-xl mb-2">Beziehung</h3>
+<p class="text-sm text-on-primary/80">Wir halten durch — gemeinsam mit dir.</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-variant p-8 rounded-[2rem] shadow-sm relative overflow-hidden group">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<h3 class="font-headline font-bold text-xl mb-2">Individuell</h3>
+<p class="text-sm text-on-surface-variant">Kein Schema, sondern echtes Verstehen.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] shadow-sm relative overflow-hidden group">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">moving</span>
+<h3 class="font-headline font-bold text-xl mb-2">Halt</h3>
+<p class="text-sm text-on-surface-variant">Ein Ort, der bleibt, auch wenn es schwer wird.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Wie wir arbeiten -->
+<section class="py-24 bg-surface-container-low overflow-hidden" id="arbeit">
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="mb-16 text-center max-w-3xl mx-auto">
+<div class="inline-flex items-center gap-6 mb-4">
+<svg class="w-10 h-10 botanical-accent" viewbox="0 0 100 100">
+<path class="fill-none stroke-primary stroke-1" d="M50 80 Q60 50 50 20 Q40 50 50 80"></path>
+</svg>
+<h2 class="font-headline text-4xl font-bold">Wie wir arbeiten</h2>
+<svg class="w-10 h-10 botanical-accent rotate-180" viewbox="0 0 100 100">
+<path class="fill-none stroke-primary stroke-1" d="M50 80 Q60 50 50 20 Q40 50 50 80"></path>
+</svg>
+</div>
+<p class="text-on-surface-variant text-xl leading-relaxed mt-6">
+                Jede Maßnahme bei Bloom ist einmalig — zugeschnitten auf den Menschen, der sie braucht. Kein Schema. Kein Einheitsangebot. Wir nehmen uns Zeit, um zu verstehen, was jemand wirklich braucht. Erst dann entwickeln wir gemeinsam den richtigen Weg.
+            </p>
+</div>
+<div class="relative h-[400px] rounded-[3rem] overflow-hidden group shadow-xl">
+<img alt="Delicate blooming flowers" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd2iJzLNTyDZSX8as6APlgXCXQKVjjkveYskNCZP1BO04kptqRXgdaUPhSVlm7qjXVMrIYS0NA6nZsZmZmlpYwSox1LQ-ZGjoM28w6TmQBlzVWOuF71KE5SBJVZtfZPNtsWZ4EGZmLlkWlfVXCBIzg9esNAsislXh0hLFqxjjfY4-pUBnBnIzpSjvZvO3v-vD8paqkKM_1I8peh_dEPA67kuvexKoLKu623SCYsGenX1jdTAgwb0iTmj5JFHgUV25cZrETCTI4E0s"/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors"></div>
+</div>
+</div>
+</section>
+<!-- Für Fachkräfte & Team -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-8">
+<!-- Fachkräfte -->
+<div class="bg-surface-container-high rounded-[3rem] p-12 relative overflow-hidden">
+<div class="absolute right-0 bottom-0 w-64 h-64 botanical-accent pointer-events-none translate-x-10 translate-y-10">
+<svg class="w-full h-full fill-none stroke-primary stroke-[0.3]" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 90 C30 70 40 40 50 10 M10 90 C40 80 70 70 90 10"></path>
+</svg>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline text-2xl font-bold mb-6">Für Fachkräfte &amp; Jugendämter</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                        Wenn klassische Angebote nicht mehr helfen, sind wir der nächste Schritt. Wir nehmen Anfragen ernst und antworten persönlich. Platzanfrage? Schreib uns: <a class="text-primary font-bold hover:underline" href="mailto:anfrage@bloom-jugendhilfe.de">anfrage@bloom-jugendhilfe.de</a>
+</p>
+<div class="inline-flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-bold">Direkter Kontakt</span>
+</div>
+</div>
+</div>
+<!-- Team -->
+<div class="bg-primary rounded-[3rem] p-12 text-on-primary relative overflow-hidden group">
+<div class="relative z-10">
+<h3 class="font-headline text-2xl font-bold mb-6">Werde Teil des Teams</h3>
+<p class="text-on-primary/80 text-lg leading-relaxed mb-8">
+                        Du möchtest junge Menschen begleiten, die besondere Zuwendung brauchen? Und auch in herausfordernden Momenten offen und zugewandt bleiben? Dann freuen wir uns, dich kennenzulernen. <a class="text-white font-bold hover:underline" href="mailto:bewerbung@bloom-jugendhilfe.de">bewerbung@bloom-jugendhilfe.de</a>
+</p>
+<div class="inline-flex items-center gap-2">
+<span class="material-symbols-outlined">person_add</span>
+<span class="font-bold">Jetzt bewerben</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-24 bg-surface" id="contact">
+<div class="max-w-7xl mx-auto px-8">
+<div class="bg-surface-container-high rounded-[4rem] overflow-hidden flex flex-col lg:flex-row shadow-2xl relative border border-primary/5">
+<div class="lg:w-1/2 p-12 lg:p-20 bg-primary text-on-primary relative overflow-hidden">
+<div class="absolute -right-20 -bottom-20 w-[400px] h-[400px] opacity-10 pointer-events-none rotate-45">
+<svg class="w-full h-full fill-none stroke-white stroke-[0.3]" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M50 90 Q50 50 80 20 M50 90 Q50 60 20 40 M50 70 Q70 40 50 10 Q30 40 50 70"></path>
+</svg>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl font-bold mb-8">Lass uns ins Gespräch kommen</h2>
+<p class="text-xl text-on-primary/80 mb-12">Kontaktiere uns, um mehr über unseren pädagogischen Ansatz zu erfahren oder individuelle Betreuungsfälle zu besprechen.</p>
+<div class="space-y-8">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-2xl bg-on-primary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-primary">location_on</span>
+</div>
+<div>
+<h4 class="font-bold text-lg">Adresse</h4>
+<p class="text-on-primary/70">47506 Neukirchen-Vluyn, Deutschland</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-2xl bg-on-primary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-primary">mail</span>
+</div>
+<div>
+<h4 class="font-bold text-lg">E-Mail</h4>
+<p class="text-on-primary/70">info@bloom-jugendhilfe.de</p>
+</div>
+</div>
+</div>
+<div class="mt-20 pt-10 border-t border-on-primary/10 flex justify-between items-end">
+<div>
+<p class="font-headline font-bold text-lg">Bloom Jugendhilfe &amp; Entwicklung UG</p>
+<p class="text-on-primary/60 text-sm">Professionelle Begleitung für nachhaltiges Wachstum.</p>
+</div>
+<img alt="Bloom Icon Small" class="w-12 h-12 object-contain opacity-50 brightness-200" src="https://lh3.googleusercontent.com/aida/ADBb0uhkJxTrGWlKYVaKZYAcT8Fv4x3WPjn_-7wFTBjPMVV9O0T3VqFtGV1TYELvneCjvGkn1ifOfL8clAXHW56F6RkJTqiHAo8_etEGjCv_8VrnJGmHk4UbEPwt3JPpShvb3z6LV24VsNLnDeBdl6I_Q5sU4gTyLkDeU0z4xknyw5uHsC6Cs6q_WTcw5Gb_MUEsHiqqxMygjDGSTKq53VI0hVMCnScosAL6xy-jc6R1Xv-xsn4h2c2maB6lzU7xctGQBGkFA1HYU0jR"/>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 p-12 lg:p-20 bg-surface-container-lowest relative overflow-hidden">
+<form class="space-y-6 relative z-10">
+<div class="grid md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-sm font-semibold text-on-surface-variant ml-1">Vollständiger Name</label>
+<input class="w-full px-6 py-4 rounded-2xl bg-surface-container-high border-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Dein Name" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-sm font-semibold text-on-surface-variant ml-1">E-Mail Adresse</label>
+<input class="w-full px-6 py-4 rounded-2xl bg-surface-container-high border-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="name@beispiel.de" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-sm font-semibold text-on-surface-variant ml-1">Betreff</label>
+<select class="w-full px-6 py-4 rounded-2xl bg-surface-container-high border-none focus:ring-2 focus:ring-primary/20 transition-all">
+<option>Platzanfrage</option>
+<option>Allgemeine Frage</option>
+<option>Kooperationsanfrage</option>
+<option>Bewerbung</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label text-sm font-semibold text-on-surface-variant ml-1">Nachricht</label>
+<textarea class="w-full px-6 py-4 rounded-2xl bg-surface-container-high border-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Wie können wir helfen?" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-2xl font-headline font-bold text-lg hover:shadow-lg hover:bg-primary-dim transition-all active:scale-95" type="submit">
+                                Nachricht senden
+                            </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 mt-20 bg-[#f7f2f9] dark:bg-slate-900 border-t border-primary/10">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start gap-3">
+<div class="flex items-center gap-3">
+<img alt="Bloom Icon" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uhkJxTrGWlKYVaKZYAcT8Fv4x3WPjn_-7wFTBjPMVV9O0T3VqFtGV1TYELvneCjvGkn1ifOfL8clAXHW56F6RkJTqiHAo8_etEGjCv_8VrnJGmHk4UbEPwt3JPpShvb3z6LV24VsNLnDeBdl6I_Q5sU4gTyLkDeU0z4xknyw5uHsC6Cs6q_WTcw5Gb_MUEsHiqqxMygjDGSTKq53VI0hVMCnScosAL6xy-jc6R1Xv-xsn4h2c2maB6lzU7xctGQBGkFA1HYU0jR"/>
+<span class="font-headline font-bold text-[#6c5585] text-2xl">Bloom</span>
+</div>
+<p class="font-body text-sm text-[#343139]/70 dark:text-slate-400 max-w-xs text-center md:text-left">Nachhaltige individuelle Entwicklung durch zuverlässige professionelle Beziehungen.</p>
+</div>
+<div class="flex flex-col items-center md:items-end gap-4">
+<div class="flex gap-8 font-body text-sm text-[#343139]/70 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Datenschutz</a>
+<a class="hover:text-primary transition-colors" href="#">Impressum</a>
+<a class="hover:text-primary transition-colors" href="#">AGB</a>
+</div>
+<p class="font-body text-xs text-[#343139]/50 dark:text-slate-500">© 2024 Bloom Jugendhilfe &amp; Entwicklung UG. Alle Rechte vorbehalten.</p>
+</div>
+</div>
+</footer>
+</body></html>
