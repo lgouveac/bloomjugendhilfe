@@ -1,0 +1,7 @@
+{
+  "name": "bloom-contact-api",
+  "private": true,
+  "dependencies": {
+    "resend": "^4.0.0"
+  }
+}

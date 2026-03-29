@@ -127,10 +127,36 @@
       <tr><td>Passwort</td><td>12345haha</td></tr>
     </table>
 
+    <table style="margin-top:1rem">
+      <tr>
+        <td>Dienst</td>
+        <td><span class="badge badge-purple">E-Mail API (Resend)</span></td>
+      </tr>
+      <tr><td>Plattform</td><td>resend.com (Login via GitHub)</td></tr>
+      <tr><td>GitHub E-Mail</td><td>bloomjugendhilfe.dev@flowcode.cc</td></tr>
+      <tr><td>GitHub Passwort</td><td>Flowcode123!</td></tr>
+      <tr><td>API Key</td><td>re_dtNHhYmZ_67HFCeGSDGXiM9x5hWoPhb56</td></tr>
+      <tr><td>API Endpoint</td><td>https://api-server-eight-pi.vercel.app/api/send</td></tr>
+      <tr><td>Empfaenger</td><td>info@bloomkinderundjugendhilfe.de, lory.p@hotmail.de</td></tr>
+      <tr><td>Absender</td><td>noreply@bloomkinderundjugendhilfe.de</td></tr>
+    </table>
+
     <div class="note">
       <strong>Wichtig:</strong> Diese Zugangsdaten sind vertraulich. Teilen Sie diese Datei niemals oeffentlich.
       Verwenden Sie einen Passwort-Manager (1Password, Bitwarden) fuer sichere Aufbewahrung.
     </div>
+  </section>
+
+  <!-- Kontaktformular -->
+  <section>
+    <h2>Kontaktformular (Architektur)</h2>
+    <table>
+      <tr><td>Ablauf</td><td>Formular &rarr; Vercel Edge Function &rarr; Resend API &rarr; E-Mails</td></tr>
+      <tr><td>Backend</td><td>Vercel Serverless (api-server/api/send.js)</td></tr>
+      <tr><td>Vercel Projekt</td><td>api-server (cataldosistondevflowcodes-projects)</td></tr>
+      <tr><td>Env Variable</td><td>RESEND_API_KEY (konfiguriert im Vercel Dashboard)</td></tr>
+      <tr><td>Domain Setup</td><td>bloomkinderundjugendhilfe.de muss im Resend Dashboard verifiziert sein</td></tr>
+    </table>
   </section>
 
   <!-- Farbpalette -->
@@ -156,7 +182,7 @@
   </section>
 
   <footer>
-    Bloom Jugendhilfe & Entwicklung — Interne Dokumentation — Aktualisiert am 28.03.2026
+    Bloom Jugendhilfe & Entwicklung — Interne Dokumentation — Aktualisiert am 29.03.2026
   </footer>
 </div>
 
