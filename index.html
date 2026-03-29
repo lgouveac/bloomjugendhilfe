@@ -185,10 +185,10 @@ tailwind.config = {
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
     <div class="space-y-6 sm:space-y-8 text-center md:text-left" id="hero-content">
-      <h1 class="font-headline text-4xl sm:text-5xl lg:text-7xl font-extrabold text-on-surface leading-[1.1] tracking-tight">
+      <h1 class="font-headline text-3xl sm:text-5xl lg:text-7xl font-extrabold text-on-surface leading-[1.1] tracking-tight">
         Potenziale entfalten. <span class="text-primary italic">Gemeinsam</span> aufblühen.
       </h1>
-      <p class="text-lg sm:text-xl text-on-surface-variant max-w-xl leading-relaxed mx-auto md:mx-0">
+      <p class="text-base sm:text-xl text-on-surface-variant max-w-xl leading-relaxed mx-auto md:mx-0">
         Wir begleiten junge Menschen auf ihrem Weg in ein selbstbestimmtes Leben, mit Geduld, Vertrauen und individueller Förderung.
       </p>
       <div class="flex flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
@@ -280,6 +280,79 @@ tailwind.config = {
   </div>
 </section>
 
+<!-- EPM Section -->
+<section class="relative py-20 sm:py-32 overflow-hidden" id="epm">
+  <!-- Animated background gradient -->
+  <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary-dim to-[#3d2a54]"></div>
+  <!-- Floating particles -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="epm-particle absolute w-2 h-2 rounded-full bg-primary-container/20" style="top:15%;left:10%"></div>
+    <div class="epm-particle absolute w-3 h-3 rounded-full bg-primary-container/15" style="top:40%;left:85%"></div>
+    <div class="epm-particle absolute w-1.5 h-1.5 rounded-full bg-primary-container/25" style="top:70%;left:20%"></div>
+    <div class="epm-particle absolute w-2.5 h-2.5 rounded-full bg-primary-container/15" style="top:25%;left:70%"></div>
+    <div class="epm-particle absolute w-2 h-2 rounded-full bg-primary-container/20" style="top:80%;left:60%"></div>
+    <div class="epm-particle absolute w-1.5 h-1.5 rounded-full bg-primary-container/30" style="top:55%;left:40%"></div>
+  </div>
+  <!-- Subtle mesh overlay -->
+  <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+      <!-- Left: Title -->
+      <div id="epm-text">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-on-primary/10 backdrop-blur-sm mb-6 sm:mb-8">
+          <span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings: 'FILL' 1;">info</span>
+          <span class="text-primary-container font-label text-xs font-semibold tracking-widest uppercase">Unser Kernkonzept</span>
+        </div>
+        <h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold text-on-primary leading-tight mb-6 sm:mb-8 epm-heading">
+          Was ist eine<br/><span class="text-primary-container">Einzelpädagogische Maßnahme</span>?
+        </h2>
+        <p class="text-on-primary/75 text-base sm:text-lg leading-relaxed epm-body">
+          Kurz gefasst: die EPM ist eine intensive Betreuungsform, bei der ein Kind oder eine/ein Jugendliche/r individuell und eng begleitet wird. Ziel ist es, in einem geschützten Rahmen Stabilität zu schaffen, persönliche Entwicklung zu fördern und neue Perspektiven zu eröffnen.
+        </p>
+      </div>
+
+      <!-- Right: 2:1 Setting Card -->
+      <div id="epm-card">
+        <div class="bg-on-primary/[0.07] backdrop-blur-md rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-10 lg:p-12 border border-on-primary/10 epm-glass">
+          <div class="flex items-center gap-4 mb-6 sm:mb-8">
+            <div class="flex -space-x-3">
+              <div class="w-12 h-12 rounded-full bg-primary-container/30 border-2 border-on-primary/20 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary-container text-xl" style="font-variation-settings: 'FILL' 1;">school</span>
+              </div>
+              <div class="w-12 h-12 rounded-full bg-primary-container/30 border-2 border-on-primary/20 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary-container text-xl" style="font-variation-settings: 'FILL' 1;">shield</span>
+              </div>
+            </div>
+            <div>
+              <span class="font-headline font-bold text-on-primary text-lg sm:text-xl">2:1-Setting</span>
+              <p class="text-on-primary/50 text-xs sm:text-sm">Fachkraft + Deeskalationsteam</p>
+            </div>
+          </div>
+          <p class="text-on-primary/80 text-sm sm:text-base leading-relaxed">
+            Wir arbeiten im 2:1-Setting: Neben der pädagogischen Fachkraft ist jederzeit ein Mitarbeitender des Deeskalationsteams anwesend. So gewährleisten wir sowohl die Sicherheit des/der Klient*in als auch des pädagogischen Personals und können in herausfordernden Situationen schnell und professionell reagieren.
+          </p>
+          <!-- Visual indicators -->
+          <div class="flex flex-wrap gap-3 mt-6 sm:mt-8">
+            <div class="flex items-center gap-2 bg-on-primary/10 px-4 py-2 rounded-full">
+              <span class="material-symbols-outlined text-primary-container text-base" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+              <span class="text-primary-container text-xs sm:text-sm font-semibold">Sicherheit</span>
+            </div>
+            <div class="flex items-center gap-2 bg-on-primary/10 px-4 py-2 rounded-full">
+              <span class="material-symbols-outlined text-primary-container text-base" style="font-variation-settings: 'FILL' 1;">support</span>
+              <span class="text-primary-container text-xs sm:text-sm font-semibold">Stabilität</span>
+            </div>
+            <div class="flex items-center gap-2 bg-on-primary/10 px-4 py-2 rounded-full">
+              <span class="material-symbols-outlined text-primary-container text-base" style="font-variation-settings: 'FILL' 1;">emoji_objects</span>
+              <span class="text-primary-container text-xs sm:text-sm font-semibold">Perspektiven</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Wie wir arbeiten -->
 <section class="py-16 sm:py-24 bg-surface-container-low overflow-hidden" id="arbeit">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -294,7 +367,7 @@ tailwind.config = {
         </svg>
       </div>
       <p class="text-on-surface-variant text-base sm:text-xl leading-relaxed mt-4 sm:mt-6">
-        Jede Maßnahme bei Bloom ist einmalig — zugeschnitten auf den Menschen, der sie braucht. Kein Schema. Kein Einheitsangebot.
+        Jede Maßnahme bei Bloom ist einmalig. Zugeschnitten auf den Menschen, der sie braucht. Kein Schema. Kein Einheitsangebot.
       </p>
     </div>
 
@@ -365,18 +438,22 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- Für Fachkräfte & Team -->
+<!-- Für Fachkräfte & Jugendämter -->
 <section class="py-16 sm:py-24 bg-surface overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-6 sm:gap-8">
-    <!-- Fachkräfte -->
-    <div class="bg-surface-container-high rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 relative overflow-hidden card-section">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-surface-container-high rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 lg:p-16 relative overflow-hidden card-section">
       <div class="flower-float absolute right-0 bottom-0 w-48 sm:w-64 h-48 sm:h-64 botanical-accent pointer-events-none translate-x-10 translate-y-10" id="flower-fach">
         <svg class="w-full h-full fill-none stroke-primary stroke-[0.3]" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
           <path d="M10 90 C30 70 40 40 50 10 M10 90 C40 80 70 70 90 10"></path>
         </svg>
       </div>
-      <div class="relative z-10">
-        <h3 class="font-headline text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Für Fachkräfte &amp; Jugendämter</h3>
+      <div class="relative z-10 max-w-3xl">
+        <div class="flex items-center gap-3 mb-4 sm:mb-6">
+          <div class="w-10 h-10 rounded-xl bg-primary-container/40 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+          </div>
+          <h3 class="font-headline text-xl sm:text-2xl font-bold">Für Fachkräfte &amp; Jugendämter</h3>
+        </div>
         <p class="text-on-surface-variant text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
           Wenn klassische Angebote nicht mehr helfen, sind wir der nächste Schritt. Wir nehmen Anfragen ernst und antworten persönlich. Platzanfrage? Schreib uns: <a class="text-primary font-bold hover:underline" href="mailto:info@bloomkinderundjugendhilfe.de">info@bloomkinderundjugendhilfe.de</a>
         </p>
@@ -387,18 +464,69 @@ tailwind.config = {
         </button>
       </div>
     </div>
-    <!-- Team -->
-    <div class="bg-primary rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 text-on-primary relative overflow-hidden group card-section">
-      <div class="relative z-10">
-        <h3 class="font-headline text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Werde Teil des Teams</h3>
-        <p class="text-on-primary/80 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
-          Du möchtest junge Menschen begleiten, die besondere Zuwendung brauchen? Und auch in herausfordernden Momenten offen und zugewandt bleiben? Dann freuen wir uns, dich kennenzulernen. <a class="text-white font-bold hover:underline" href="mailto:info@bloomkinderundjugendhilfe.de">info@bloomkinderundjugendhilfe.de</a>
-        </p>
-        <button onclick="navigator.clipboard.writeText('info@bloomkinderundjugendhilfe.de').then(()=>{var t=this.querySelector('.copy-msg');t.classList.remove('opacity-0');t.classList.add('opacity-100');setTimeout(()=>{t.classList.remove('opacity-100');t.classList.add('opacity-0')},2000)})" class="inline-flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer bg-transparent border-none text-on-primary p-0 relative">
-          <span class="material-symbols-outlined">content_copy</span>
-          <span class="font-bold">Jetzt bewerben</span>
-          <span class="copy-msg absolute -bottom-7 left-0 text-xs font-semibold bg-surface text-primary px-3 py-1 rounded-full shadow-md opacity-0 transition-opacity duration-300 whitespace-nowrap">E-Mail kopiert!</span>
-        </button>
+  </div>
+</section>
+
+<!-- Werde Teil des Teams -->
+<section class="py-16 sm:py-24 bg-surface-container-low overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Unified container -->
+    <div class="bg-primary rounded-[2rem] sm:rounded-[3rem] overflow-hidden card-section">
+      <!-- Header -->
+      <div class="p-8 sm:p-12 lg:p-16 text-on-primary relative">
+        <div class="relative z-10">
+          <h3 class="font-headline text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Werde Teil des Teams</h3>
+          <p class="text-on-primary/80 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-3xl">
+            Du möchtest junge Menschen begleiten, die besondere Zuwendung brauchen? Und auch in herausfordernden Momenten offen und zugewandt bleiben? Dann freuen wir uns, dich kennenzulernen.
+          </p>
+          <button onclick="navigator.clipboard.writeText('info@bloomkinderundjugendhilfe.de').then(()=>{var t=this.querySelector('.copy-msg');t.classList.remove('opacity-0');t.classList.add('opacity-100');setTimeout(()=>{t.classList.remove('opacity-100');t.classList.add('opacity-0')},2000)})" class="inline-flex items-center gap-2 bg-on-primary/10 hover:bg-on-primary/20 text-on-primary px-4 sm:px-6 py-3 rounded-full transition-all cursor-pointer border-none relative max-w-full">
+            <span class="material-symbols-outlined flex-shrink-0">content_copy</span>
+            <span class="font-bold text-sm sm:text-base truncate">info@bloomkinderundjugendhilfe.de</span>
+            <span class="copy-msg absolute -bottom-8 left-0 text-xs font-semibold bg-surface text-primary px-3 py-1 rounded-full shadow-md opacity-0 transition-opacity duration-300 whitespace-nowrap">E-Mail kopiert!</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Aufgaben & Profil inside same card -->
+      <div class="grid md:grid-cols-2 gap-px bg-primary-dim/30">
+        <!-- Deine Aufgaben -->
+        <div class="bg-surface-container-lowest p-8 sm:p-12 relative overflow-hidden">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-primary-container/40 flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">assignment</span>
+            </div>
+            <h3 class="font-headline text-xl sm:text-2xl font-bold">Deine Aufgaben</h3>
+          </div>
+          <ul class="space-y-3 text-on-surface-variant text-sm sm:text-base leading-relaxed">
+            <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-lg mt-0.5 flex-shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>Unterstützung und Begleitung des Kindes oder Jugendlichen in allen Lebenssituationen im 2:1-Setting</li>
+            <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-lg mt-0.5 flex-shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>Aufbau einer tragfähigen und stabilen Beziehung als feste Bezugsperson</li>
+            <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-lg mt-0.5 flex-shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>Gestaltung eines klar strukturierten Alltags mit verbindlichen Regeln und Ritualen</li>
+            <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-lg mt-0.5 flex-shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>Krisenintervention und Stabilisierung in herausfordernden Situationen</li>
+            <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-lg mt-0.5 flex-shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>Förderung von Selbstregulation, sozialer Kompetenz und Selbstständigkeit</li>
+            <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-lg mt-0.5 flex-shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>Planung und Durchführung von erlebnispädagogischen, sportlichen und alltagspraktischen Aktivitäten</li>
+            <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-lg mt-0.5 flex-shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>Dokumentation der pädagogischen Arbeit und Teilnahme an Hilfeplangesprächen</li>
+          </ul>
+        </div>
+
+        <!-- Dein Profil -->
+        <div class="bg-surface-container-lowest p-8 sm:p-12 relative overflow-hidden">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-primary-container/40 flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">person_search</span>
+            </div>
+            <h3 class="font-headline text-xl sm:text-2xl font-bold">Dein Profil</h3>
+          </div>
+          <ul class="space-y-3 text-on-surface-variant text-sm sm:text-base leading-relaxed">
+            <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-lg mt-0.5 flex-shrink-0" style="font-variation-settings: 'FILL' 1;">school</span>Abgeschlossenes Studium oder Ausbildung als z.&nbsp;B.: Sozialpädagog*in, Erzieher*in, Erziehungswissenschaftler*in, Heilpädagog*in, Heilerziehungspfleger*in, Pädagog*in oder vergleichbare Qualifikation</li>
+            <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-lg mt-0.5 flex-shrink-0" style="font-variation-settings: 'FILL' 1;">favorite</span>Hohe Beziehungsfähigkeit und Reflexionsfähigkeit</li>
+            <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-lg mt-0.5 flex-shrink-0" style="font-variation-settings: 'FILL' 1;">trending_up</span>Motivation, jungen Menschen neue Perspektiven zu eröffnen</li>
+            <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-lg mt-0.5 flex-shrink-0" style="font-variation-settings: 'FILL' 1;">shield</span>Geduld und Belastbarkeit im Umgang mit Krisen und Konflikten</li>
+            <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-lg mt-0.5 flex-shrink-0" style="font-variation-settings: 'FILL' 1;">psychology</span>Empathie und Verständnis für Kinder/Jugendliche in herausfordernden Lebenssituationen</li>
+            <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-lg mt-0.5 flex-shrink-0" style="font-variation-settings: 'FILL' 1;">straighten</span>Strukturierte und klare pädagogische Haltung</li>
+            <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-lg mt-0.5 flex-shrink-0" style="font-variation-settings: 'FILL' 1;">schedule</span>Bereitschaft zur Arbeit im Schichtdienst bzw. 24-Stunden-Betreuungssetting</li>
+            <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-lg mt-0.5 flex-shrink-0" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>Erfahrung in der Arbeit mit herausfordernden Kindern und Jugendlichen von Vorteil</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -640,6 +768,39 @@ gsap.from("#flower-antrieb", {
 gsap.from("#flower-antrieb-left", {
   scale: 0.2, opacity: 0, rotation: 20, duration: 1.5, ease: "elastic.out(1, 0.6)",
   scrollTrigger: { trigger: "#antrieb", start: "top 50%", toggleActions: "play none none reverse" }
+});
+
+// --- EPM section ---
+// Floating particles
+gsap.utils.toArray(".epm-particle").forEach((p, i) => {
+  gsap.to(p, {
+    y: `random(-40, 40)`, x: `random(-30, 30)`,
+    duration: 3 + i * 0.7, repeat: -1, yoyo: true, ease: "sine.inOut",
+    delay: i * 0.3
+  });
+});
+// Text reveal
+gsap.from("#epm-text .epm-heading", {
+  y: 60, opacity: 0, duration: 1.2, ease: "power3.out",
+  scrollTrigger: { trigger: "#epm", start: "top 65%", toggleActions: "play none none reverse" }
+});
+gsap.from("#epm-text .epm-body", {
+  y: 40, opacity: 0, duration: 1, delay: 0.3, ease: "power2.out",
+  scrollTrigger: { trigger: "#epm", start: "top 65%", toggleActions: "play none none reverse" }
+});
+gsap.from("#epm-text > div:first-child", {
+  x: -30, opacity: 0, duration: 0.8, ease: "power2.out",
+  scrollTrigger: { trigger: "#epm", start: "top 70%", toggleActions: "play none none reverse" }
+});
+// Card slide in from right
+gsap.from("#epm-card", {
+  x: 80, opacity: 0, duration: 1.2, ease: "power3.out",
+  scrollTrigger: { trigger: "#epm", start: "top 60%", toggleActions: "play none none reverse" }
+});
+// Card inner elements stagger
+gsap.from("#epm-card .rounded-full", {
+  scale: 0, opacity: 0, stagger: 0.1, duration: 0.6, ease: "back.out(2)",
+  scrollTrigger: { trigger: "#epm-card", start: "top 75%", toggleActions: "play none none reverse" }
 });
 
 // --- Arbeit section ---
