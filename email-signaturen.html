@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>E-Mail-Signaturen | Bloom Jugendhilfe &amp; Entwicklung GbR</title>
+<style>
+  body { margin:0; background:#f7f2f9; font-family:'Segoe UI',Arial,sans-serif; color:#343139; }
+  .wrap { max-width:820px; margin:0 auto; padding:40px 20px 80px; }
+  .pagehead { text-align:center; margin-bottom:40px; }
+  .pagehead h1 { font-size:28px; margin:0 0 8px; color:#6c5585; }
+  .pagehead p { color:#615e67; margin:0; font-size:15px; }
+  .card { background:#fff; border-radius:20px; padding:28px; margin-bottom:32px; box-shadow:0 12px 40px -14px rgba(52,49,57,.12); }
+  .card-top { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:8px; }
+  .badge { display:inline-block; background:#e3c6fd; color:#543e6b; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:5px 12px; border-radius:999px; }
+  .card h2 { font-size:20px; margin:0; color:#343139; }
+  .desc { color:#615e67; font-size:14px; margin:4px 0 22px; }
+  .preview { background:#fdf8fd; border:1px dashed #d5b9ef; border-radius:14px; padding:26px; overflow-x:auto; }
+  .actions { margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; }
+  button { cursor:pointer; border:none; font-size:14px; font-weight:600; padding:11px 20px; border-radius:999px; transition:.15s; }
+  .btn-primary { background:#6c5585; color:#fff; }
+  .btn-primary:hover { background:#604978; }
+  .btn-ghost { background:transparent; color:#6c5585; border:1.5px solid rgba(108,85,133,.25); }
+  .btn-ghost:hover { background:rgba(108,85,133,.06); }
+  .note { background:#fff4e0; border:1px solid #e0a94d; color:#8a5a00; border-radius:12px; padding:14px 18px; font-size:13.5px; line-height:1.6; margin-bottom:34px; }
+  .note b { color:#6b4600; }
+  .toast { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px); background:#6c5585; color:#fff; padding:12px 22px; border-radius:999px; font-weight:600; font-size:14px; opacity:0; pointer-events:none; transition:.25s; box-shadow:0 10px 30px -8px rgba(52,49,57,.4); }
+  .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+  code.inline { background:#f1ecf5; padding:2px 7px; border-radius:6px; font-size:12.5px; color:#604978; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="pagehead">
+    <h1>E-Mail-Signaturen</h1>
+    <p>Zwei Vorlagen im Bloom-Design &middot; kopieren und in Outlook, Gmail &amp; Apple Mail einfügen</p>
+  </div>
+
+  <div class="note">
+    <b>Vor dem Einsatz anpassen:</b> Ersetzen Sie die Platzhalter
+    <code class="inline">[Name]</code>, <code class="inline">[Funktion]</code> und
+    <code class="inline">[Telefon]</code> mit Ihren Daten. Das Logo wird über
+    <code class="inline">https://bloomjugendhilfe.de/logo.png</code> geladen &ndash; das Bild muss online
+    erreichbar sein, damit es in E-Mails angezeigt wird. Zum Übernehmen: <b>„HTML kopieren"</b> klicken
+    und im E-Mail-Programm als Signatur einfügen (in Gmail direkt in das Signaturfeld einfügen).
+  </div>
+
+  <!-- ============ MODELL 1: KLASSISCH / HORIZONTAL ============ -->
+  <div class="card">
+    <div class="card-top">
+      <h2>Modell 1 &middot; Klassisch</h2>
+      <span class="badge">Horizontal &middot; mit Logo</span>
+    </div>
+    <p class="desc">Logo links, Kontaktdaten rechts, dezente Trennlinie in Markenfarbe. Ruhig und seriös.</p>
+    <div class="preview">
+      <div id="sig1">
+<!-- === BLOOM SIGNATUR MODELL 1 === -->
+<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;color:#343139;font-size:14px;line-height:1.5;">
+  <tr>
+    <td style="padding-right:22px;vertical-align:top;border-right:2px solid #e3c6fd;">
+      <img src="https://bloomjugendhilfe.de/logo.png" alt="Bloom Jugendhilfe &amp; Entwicklung" width="120" style="display:block;width:120px;height:auto;"/>
+    </td>
+    <td style="padding-left:22px;vertical-align:top;">
+      <div style="font-size:16px;font-weight:bold;color:#6c5585;">[Name]</div>
+      <div style="font-size:13px;color:#615e67;padding-bottom:8px;">[Funktion]</div>
+      <div style="font-size:13px;font-weight:bold;color:#343139;padding-bottom:6px;">Bloom Jugendhilfe &amp; Entwicklung GbR</div>
+      <div style="font-size:13px;color:#615e67;">
+        Vluyner Platz 15 &middot; 47506 Neukirchen-Vluyn<br/>
+        Tel: [Telefon]<br/>
+        <a href="mailto:info@bloomkinderundjugendhilfe.de" style="color:#6c5585;text-decoration:none;">info@bloomkinderundjugendhilfe.de</a><br/>
+        <a href="https://bloomjugendhilfe.de" style="color:#6c5585;text-decoration:none;font-weight:bold;">bloomjugendhilfe.de</a>
+      </div>
+    </td>
+  </tr>
+</table>
+<!-- === ENDE MODELL 1 === -->
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn-primary" onclick="copySig('sig1')">HTML kopieren</button>
+      <button class="btn-ghost" onclick="copyText('sig1')">Als Text kopieren</button>
+    </div>
+  </div>
+
+  <!-- ============ MODELL 2: MODERN / KOMPAKT ============ -->
+  <div class="card">
+    <div class="card-top">
+      <h2>Modell 2 &middot; Modern</h2>
+      <span class="badge">Kompakt &middot; Akzentbalken</span>
+    </div>
+    <p class="desc">Gestapeltes Layout mit farbigem Akzentbalken und Icon-Kontaktzeilen. Modern und platzsparend &ndash; ideal auch fürs Handy.</p>
+    <div class="preview">
+      <div id="sig2">
+<!-- === BLOOM SIGNATUR MODELL 2 === -->
+<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;color:#343139;font-size:14px;line-height:1.5;">
+  <tr>
+    <td style="border-left:4px solid #6c5585;padding:2px 0 2px 16px;">
+      <div style="font-size:17px;font-weight:bold;color:#343139;">[Name]</div>
+      <div style="font-size:13px;color:#9279AB;font-weight:bold;letter-spacing:.02em;padding-bottom:10px;">[Funktion] &middot; Bloom Jugendhilfe &amp; Entwicklung GbR</div>
+      <table cellpadding="0" cellspacing="0" border="0" style="font-size:13px;color:#615e67;">
+        <tr>
+          <td style="padding:1px 8px 1px 0;color:#6c5585;font-weight:bold;">Tel</td>
+          <td style="padding:1px 0;">[Telefon]</td>
+        </tr>
+        <tr>
+          <td style="padding:1px 8px 1px 0;color:#6c5585;font-weight:bold;">Mail</td>
+          <td style="padding:1px 0;"><a href="mailto:info@bloomkinderundjugendhilfe.de" style="color:#615e67;text-decoration:none;">info@bloomkinderundjugendhilfe.de</a></td>
+        </tr>
+        <tr>
+          <td style="padding:1px 8px 1px 0;color:#6c5585;font-weight:bold;">Web</td>
+          <td style="padding:1px 0;"><a href="https://bloomjugendhilfe.de" style="color:#6c5585;text-decoration:none;font-weight:bold;">bloomjugendhilfe.de</a></td>
+        </tr>
+        <tr>
+          <td style="padding:1px 8px 1px 0;color:#6c5585;font-weight:bold;">Adr</td>
+          <td style="padding:1px 0;">Vluyner Platz 15, 47506 Neukirchen-Vluyn</td>
+        </tr>
+      </table>
+      <div style="padding-top:12px;">
+        <img src="https://bloomjugendhilfe.de/logo.png" alt="Bloom" width="88" style="display:block;width:88px;height:auto;"/>
+      </div>
+    </td>
+  </tr>
+</table>
+<!-- === ENDE MODELL 2 === -->
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn-primary" onclick="copySig('sig2')">HTML kopieren</button>
+      <button class="btn-ghost" onclick="copyText('sig2')">Als Text kopieren</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast">Kopiert!</div>
+
+<script>
+function showToast(msg){
+  var t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 1800);
+}
+function getInner(id){
+  // Return the signature markup without the surrounding wrapper div
+  var el=document.getElementById(id);
+  return el.innerHTML.trim();
+}
+function copySig(id){
+  var html=getInner(id);
+  // Copy as rich HTML so it pastes formatted into mail clients
+  if(navigator.clipboard && window.ClipboardItem){
+    var data=new ClipboardItem({
+      'text/html': new Blob([html], {type:'text/html'}),
+      'text/plain': new Blob([html], {type:'text/plain'})
+    });
+    navigator.clipboard.write([data]).then(
+      function(){ showToast('Formatierte Signatur kopiert'); },
+      function(){ fallbackCopy(html); }
+    );
+  } else { fallbackCopy(html); }
+}
+function copyText(id){
+  var html=getInner(id);
+  navigator.clipboard.writeText(html).then(
+    function(){ showToast('HTML-Code kopiert'); },
+    function(){ fallbackCopy(html); }
+  );
+}
+function fallbackCopy(text){
+  var ta=document.createElement('textarea');
+  ta.value=text; document.body.appendChild(ta); ta.select();
+  try{ document.execCommand('copy'); showToast('Kopiert'); }catch(e){ showToast('Bitte manuell kopieren'); }
+  document.body.removeChild(ta);
+}
+</script>
+</body>
+</html>
