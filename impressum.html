@@ -33,12 +33,6 @@ tailwind.config = {
 <style>
 .material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24 }
 .glass-nav { background: rgba(253, 248, 253, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
-/* Placeholder flag — clearly marks fields the operator must complete */
-.todo {
-  display: inline-flex; align-items: center; gap: .35rem;
-  background: #fff4e0; color: #8a5a00; border: 1px dashed #e0a94d;
-  padding: .1rem .55rem; border-radius: 9999px; font-weight: 600; font-size: .8em;
-}
 .legal-content h3 { scroll-margin-top: 7rem; }
 </style>
 </head>
@@ -98,16 +92,12 @@ tailwind.config = {
           <dd class="text-on-surface font-medium">Bloom Jugendhilfe &amp; Entwicklung GbR</dd>
         </div>
         <div class="grid sm:grid-cols-[200px_1fr] gap-1 sm:gap-6 py-4">
-          <dt class="font-label text-sm font-bold text-primary-dim uppercase tracking-wide">Anschrift</dt>
-          <dd class="text-on-surface">Vluyner Platz 15<br/>47506 Neukirchen-Vluyn<br/>Deutschland</dd>
+          <dt class="font-label text-sm font-bold text-primary-dim uppercase tracking-wide">Rechtsform</dt>
+          <dd class="text-on-surface">Gesellschaft bürgerlichen Rechts (GbR)</dd>
         </div>
         <div class="grid sm:grid-cols-[200px_1fr] gap-1 sm:gap-6 py-4">
-          <dt class="font-label text-sm font-bold text-primary-dim uppercase tracking-wide">Vertreten durch</dt>
-          <dd class="text-on-surface">
-            Vertretungsberechtigte Gesellschafter:<br/>
-            <span class="todo"><span class="material-symbols-outlined text-sm">edit</span>Vor- und Nachname aller Gesellschafter eintragen</span>
-            <p class="text-on-surface-variant text-sm mt-2 leading-relaxed">Als Gesellschaft bürgerlichen Rechts (GbR) sind hier sämtliche vertretungsberechtigten Gesellschafter mit vollständigem Namen zu benennen.</p>
-          </dd>
+          <dt class="font-label text-sm font-bold text-primary-dim uppercase tracking-wide">Anschrift</dt>
+          <dd class="text-on-surface">Vluyner Platz 15<br/>47506 Neukirchen-Vluyn<br/>Deutschland</dd>
         </div>
       </dl>
     </div>
@@ -122,42 +112,12 @@ tailwind.config = {
       </div>
       <dl class="divide-y divide-outline-variant/20">
         <div class="grid sm:grid-cols-[200px_1fr] gap-1 sm:gap-6 py-4">
-          <dt class="font-label text-sm font-bold text-primary-dim uppercase tracking-wide">Telefon</dt>
-          <dd class="text-on-surface"><span class="todo"><span class="material-symbols-outlined text-sm">edit</span>Telefonnummer eintragen</span></dd>
-        </div>
-        <div class="grid sm:grid-cols-[200px_1fr] gap-1 sm:gap-6 py-4">
           <dt class="font-label text-sm font-bold text-primary-dim uppercase tracking-wide">E-Mail</dt>
           <dd><a class="text-primary font-semibold hover:underline" href="mailto:info@bloomkinderundjugendhilfe.de">info@bloomkinderundjugendhilfe.de</a></dd>
         </div>
         <div class="grid sm:grid-cols-[200px_1fr] gap-1 sm:gap-6 py-4">
           <dt class="font-label text-sm font-bold text-primary-dim uppercase tracking-wide">Website</dt>
           <dd><a class="text-primary font-semibold hover:underline" href="https://bloomjugendhilfe.de">bloomjugendhilfe.de</a></dd>
-        </div>
-      </dl>
-    </div>
-
-    <!-- Registrierung / Steuern card -->
-    <div class="bg-surface-container-lowest rounded-[2rem] p-8 sm:p-12 shadow-[0_12px_40px_-12px_rgba(52,49,57,0.08)]">
-      <div class="flex items-center gap-3 mb-8">
-        <div class="w-11 h-11 rounded-2xl bg-primary-container/40 flex items-center justify-center flex-shrink-0">
-          <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">receipt_long</span>
-        </div>
-        <h2 class="font-headline text-2xl sm:text-3xl font-bold">Steuer &amp; Aufsicht</h2>
-      </div>
-      <dl class="divide-y divide-outline-variant/20">
-        <div class="grid sm:grid-cols-[200px_1fr] gap-1 sm:gap-6 py-4">
-          <dt class="font-label text-sm font-bold text-primary-dim uppercase tracking-wide">Umsatzsteuer-ID</dt>
-          <dd class="text-on-surface">
-            <span class="todo"><span class="material-symbols-outlined text-sm">edit</span>USt-IdNr. gem. § 27a UStG (falls vorhanden)</span>
-            <p class="text-on-surface-variant text-sm mt-2 leading-relaxed">Falls keine Umsatzsteuer-Identifikationsnummer vorliegt, kann diese Zeile entfernt werden.</p>
-          </dd>
-        </div>
-        <div class="grid sm:grid-cols-[200px_1fr] gap-1 sm:gap-6 py-4">
-          <dt class="font-label text-sm font-bold text-primary-dim uppercase tracking-wide">Erlaubnis / Aufsicht</dt>
-          <dd class="text-on-surface">
-            <span class="todo"><span class="material-symbols-outlined text-sm">edit</span>Zuständiges Landesjugendamt eintragen</span>
-            <p class="text-on-surface-variant text-sm mt-2 leading-relaxed">Betriebserlaubnispflichtige Angebote der Kinder- und Jugendhilfe nach § 45 SGB VIII: hier die erteilende Aufsichtsbehörde (Landesjugendamt / LVR – Landschaftsverband Rheinland) angeben, sofern zutreffend.</p>
-          </dd>
         </div>
       </dl>
     </div>
@@ -171,10 +131,8 @@ tailwind.config = {
         <h2 class="font-headline text-2xl sm:text-3xl font-bold">Redaktionell verantwortlich</h2>
       </div>
       <p class="text-on-surface-variant leading-relaxed">
-        Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:
-        <span class="todo"><span class="material-symbols-outlined text-sm">edit</span>Name &amp; Anschrift der verantwortlichen Person</span>
+        Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV ist die Bloom Jugendhilfe &amp; Entwicklung GbR, Vluyner Platz 15, 47506 Neukirchen-Vluyn.
       </p>
-      <p class="text-on-surface-variant text-sm mt-3 leading-relaxed">In der Regel ist dies eine/r der vertretungsberechtigten Gesellschafter mit ladungsfähiger Anschrift (siehe oben).</p>
     </div>
 
     <!-- Streitschlichtung -->
